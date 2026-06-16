@@ -51,6 +51,9 @@ export default function NotesPage(){
       <p className="mt-2">
         {note.content}
       </p>
+      <Link href={`/notes/${note._id}/edit`}>
+  Edit
+</Link>
     </div>
   ))}
 </div>
