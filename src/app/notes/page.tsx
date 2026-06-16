@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import Link from "next/link"
 interface Note{
     _id: string,
     title: string,
@@ -28,9 +28,16 @@ export default function NotesPage(){
 
     return(
        <div className="max-w-4xl mx-auto p-6">
-  <h1 className="text-3xl font-bold mb-6">
-    My Notes
-  </h1>
+  <div className="flex justify-between items-center mb-6">
+  <h1 className="text-3xl font-bold">My Notes</h1>
+
+  <Link
+    href="/notes/create"
+    className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700"
+  >
+    + Create Note
+  </Link>
+</div>
 
   {notes.map((note) => (
     <div
