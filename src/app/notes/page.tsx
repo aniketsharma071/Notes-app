@@ -25,7 +25,17 @@ export default function NotesPage(){
         };
         fetchNotes();
     },[]);
+const deleteNote = async (id: string) => {
+    try {
+        await axios.delete(`/api/notes/${id}`);
 
+        setNotes((prev) =>
+            prev.filter((note) => note._id !== id)
+        );
+    } catch (error) {
+        console.error(error);
+    }
+};
     return(
        <div className="max-w-4xl mx-auto p-6">
   <div className="flex justify-between items-center mb-6">
@@ -54,6 +64,10 @@ export default function NotesPage(){
       <Link href={`/notes/${note._id}/edit`}>
   Edit
 </Link>
+    <button onClick={() => deleteNote(note._id)}>
+        Delete
+    </button>
+
     </div>
   ))}
 </div>
