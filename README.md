@@ -1,7 +1,7 @@
 
 # 📝 Notes App
 
-A full-stack Notes application built with **Next.js**, **TypeScript**, **MongoDB**, and **Mongoose**. This application allows users to create, view, edit, and delete notes through a clean and responsive user interface.
+A full-stack Notes application built with **Next.js**, **TypeScript**, **MongoDB**, and **Mongoose**. The project also includes **Docker** support for easy development and deployment.
 
 ## 🚀 Features
 
@@ -21,6 +21,7 @@ A full-stack Notes application built with **Next.js**, **TypeScript**, **MongoDB
 - **ODM:** Mongoose
 - **Styling:** Tailwind CSS
 - **HTTP Client:** Axios
+- **Containerization:** Docker, Docker Compose
 
 ## 📂 Project Structure
 
@@ -108,7 +109,6 @@ docker compose down
 ```
 
 MongoDB runs in a separate Docker container, and the database is persisted using a Docker volume.
-````
 
 ##  📚 About
 - This project was created as a learning exercise to practice building a full-stack CRUD application using Next.js and MongoDB.
