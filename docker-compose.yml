@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo:7.0
+    container_name: mextjs-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+  web:
+    build: .
+    container_name: next-app
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/notes-db
+    depends_on:
+      - mongodb
+
+volumes:
+  mongo_data:

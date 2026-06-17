@@ -11,6 +11,7 @@ A full-stack Notes application built with **Next.js**, **TypeScript**, **MongoDB
 - Delete notes
 - MongoDB Atlas integration
 - RESTful API using Next.js App Router
+- Docker support with Docker Compose
 
 ## 🛠️ Tech Stack
 
@@ -43,9 +44,9 @@ src/
 │   └── page.tsx
 ├── lib/
 │   └── mongoDB.ts
-├── models/
-│   └── Notes.ts
-└── components/
+└── models/
+   └── Notes.ts
+
 
 ```
 
@@ -83,6 +84,31 @@ Open your browser and visit:
 ```
 http://localhost:3000
 ```
+
+## 🐳 Running with Docker
+
+This project can also be run using Docker and Docker Compose.
+
+### Build and start the containers
+
+```bash
+docker compose up --build
+```
+
+The application will be available at:
+
+```text
+http://localhost:3000
+```
+
+### Stop the containers
+
+```bash
+docker compose down
+```
+
+MongoDB runs in a separate Docker container, and the database is persisted using a Docker volume.
+````
 
 ##  📚 About
 - This project was created as a learning exercise to practice building a full-stack CRUD application using Next.js and MongoDB.
